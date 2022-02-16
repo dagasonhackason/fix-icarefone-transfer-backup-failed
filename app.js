@@ -8,6 +8,8 @@ var process = require("process");
 const ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH = process.env.ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH;
 const OS = process.env.OS; // Multi OS Support Comming Soon....
 
+const AndroidLocalFilesMap = []; // Will hold all data built from backup to complete the backup process even though it failed.
+
 // Loop through all the files in the backup directory
 fs.readdir(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH, function (err, files) {
   if (err) {
@@ -16,7 +18,7 @@ fs.readdir(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH, function (err, files) {
   }
 
   files.forEach(function (file, index) {
-    // Make one pass and make the file complete
+    // Make three passes and make the file complete
     var loopOneCurrentFileFolderCursor = path.join(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH, file);
 
     fs.stat(loopOneCurrentFileFolderCursor, function (error, stat) {

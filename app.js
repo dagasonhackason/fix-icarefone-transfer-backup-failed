@@ -6,9 +6,10 @@ const path = require('path');
 var process = require("process");
 
 const ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH = process.env.ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH;
-const OS = process.env.OS; // Multi OS Support Comming Soon....
+const OS = process.env.OS; // Multi OS Support Comming Soon.... Right now only Android backup fix is supported
 
-const AndroidLocalFilesMap = []; // Will hold all data built from backup to complete the backup process even though it failed.
+const AndroidLocalFilesMap = []; // Will hold all Android data built from backup to complete the backup process even though it failed.
+const IOSLocalFilesMap = []; // Will hold all IOS data built from backup to complete the backup process even though it failed.
 
 // Loop through all the files in the backup directory
 fs.readdir(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH, function (err, files) {

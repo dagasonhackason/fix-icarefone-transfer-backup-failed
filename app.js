@@ -17,7 +17,7 @@ const IOSLocalFilesMap = []; // Will hold all IOS data built from backup to comp
 const SELECTED_OS_OUTPUT_AREA = MOBILEOS === "ANDROID" ? AndroidLocalFilesMap : IOSLocalFilesMap;
 
 // Loop through all the files and folders in the backup directory
-fs.readdir(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH, function (err, files) {
+fs.readdir(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH, { withFileTypes: true }, function (err, files) {
   if (err) {
     console.error("fs.readdir() -> Couldn't hit the directory =>", err);
     process.exit(1);
@@ -40,7 +40,7 @@ fs.readdir(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH, function (err, files) {
             console.log("About this directory =>", stat);
 
             if(loopOneCurrent === "Android") {
-                fs.readdir(loopOneCurrentFileFolderCursor, function (err2, files2) {
+                fs.readdir(loopOneCurrentFileFolderCursor, { withFileTypes: true }, function (err2, files2) {
                     if (err2) {
                         console.error("fs.readdir() -> Android Dir -> Couldn't hit the directory =>", err2);
                         process.exit(1);
@@ -64,7 +64,7 @@ fs.readdir(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH, function (err, files) {
                                 console.log("About this directory =>", stat2);
                     
                                 if(loopTwoCurrent === "Media") {
-                                    fs.readdir(loopTwoCurrentFileFolderCursor, function (err3, files3) {
+                                    fs.readdir(loopTwoCurrentFileFolderCursor, { withFileTypes: true }, function (err3, files3) {
                                         if (err3) {
                                             console.error("fs.readdir() -> Media Dir -> Couldn't hit the directory =>", err3);
                                             process.exit(1);
@@ -116,7 +116,7 @@ fs.readdir(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH, function (err, files) {
                                                     }
                                         
                                                     if(loopThreeCurrent === "WallPaper") {
-                                                        fs.readdir(loopThreeCurrentFileFolderCursor, function (err4, files4) {
+                                                        fs.readdir(loopThreeCurrentFileFolderCursor, { withFileTypes: true }, function (err4, files4) {
                                                             if (err4) {
                                                                 console.error("fs.readdir() -> Media Dir -> Couldn't hit the directory =>", err4);
                                                                 process.exit(1);

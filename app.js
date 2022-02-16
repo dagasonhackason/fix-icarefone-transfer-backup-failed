@@ -1,5 +1,6 @@
 require('dotenv').config();
-const fs = require('fs');
+const Promise = require('bluebird');
+const fs = Promise.promisifyAll(require('fs'));
 const path = require('path');
 
 // In newer Node.js versions where process is already global this isn't necessary.

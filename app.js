@@ -6,17 +6,17 @@ const path = require('path');
 var process = require("process");
 
 const ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH = process.env.ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH;
-const OS = process.env.OS; // Multi OS Support Comming Soon.... Right now only Android backup fix is supported
+const MOBILEOS = process.env.MOBILEOS; // Multi OS Support Comming Soon.... Right now only Android backup fix is supported
 
-console.log("Selected OS is =>", OS);
+console.log("Selected OS is =>", MOBILEOS);
 
 const AndroidLocalFilesMap = []; // Will hold all Android data built from backup to complete the backup process even though it failed.
 const IOSLocalFilesMap = []; // Will hold all IOS data built from backup to complete the backup process even though it failed.
 
-const SELECTED_OS_OUTPUT_AREA = OS === "ANDROID" ? AndroidLocalFilesMap : IOSLocalFilesMap;
+const SELECTED_OS_OUTPUT_AREA = MOBILEOS === "ANDROID" ? AndroidLocalFilesMap : IOSLocalFilesMap;
 
 // Loop through all the files and folders in the backup directory
-fs.readdirSync(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH, function (err, files) {
+fs.readdir(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH, function (err, files) {
   if (err) {
     console.error("fs.readdir() -> Couldn't hit the directory =>", err);
     process.exit(1);
@@ -40,13 +40,13 @@ fs.readdirSync(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH, function (err, files) {
 
             if(loopOneCurrent === "Android") {
                 
-                fs.readdirSync(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH, function (err2, files2) {
+                fs.readdir(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH, function (err2, files2) {
                     if (err2) {
                         console.error("fs.readdir() -> Android Dir -> Couldn't hit the directory =>", err);
                         process.exit(1);
                     }
                     
-                    files2.forEach(function (file2, index) {
+                    files2.forEach(function (file2, index2) {
                         var loopTwoCurrentFileFolderCursor = path.join(loopOneCurrentFileFolderCursor, file2);
                     
                         fs.stat(loopTwoCurrentFileFolderCursor, function (error2, stat2) {

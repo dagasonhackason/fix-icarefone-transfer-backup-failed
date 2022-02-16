@@ -1,0 +1,23 @@
+{
+  "name": "fix-icarefone-transfer-backup-failed",
+  "version": "1.0.0",
+  "description": "if u get a backup failed just use this script to fix everything after manually copying your backup to a safe location",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dagasonhackason/fix-icarefone-transfer-backup-failed.git"
+  },
+  "keywords": [],
+  "author": "Gabriel Dagadu (@dagasonhackason)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dagasonhackason/fix-icarefone-transfer-backup-failed/issues"
+  },
+  "homepage": "https://github.com/dagasonhackason/fix-icarefone-transfer-backup-failed#readme"
+}

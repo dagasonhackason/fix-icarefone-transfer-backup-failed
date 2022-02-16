@@ -20,15 +20,33 @@ fs.readdir(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH, function (err, files) {
     var loopOneCurrentFileFolderCursor = path.join(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH, file);
 
     fs.stat(loopOneCurrentFileFolderCursor, function (error, stat) {
-      if (error) {
-        console.error("Error stating file.", error);
-        return;
-      }
+        if (error) {
+            console.error("Error stating file.", error);
+            return;
+        }
 
-      if (stat.isFile())
-        console.log("'%s' is a file.", loopOneCurrentFileFolderCursor);
-      else if (stat.isDirectory())
-        console.log("'%s' is a directory.", loopOneCurrentFileFolderCursor);
+        if (stat.isFile()) {
+            console.log("'%s' is a file.", loopOneCurrentFileFolderCursor);
+        } else if (stat.isDirectory()) {
+            console.log("'%s' is a directory.", loopOneCurrentFileFolderCursor);
+        }
     });
   });
 });
+
+
+// function handleAndroidFolder(err, arg) {
+    
+// }
+
+// function handleMediaFolder(err, arg) {
+    
+// }
+
+// function handleBackupsFolder(err, arg) {
+    
+// }
+
+// function handleDatabasesFolder(err, arg) {
+    
+// }

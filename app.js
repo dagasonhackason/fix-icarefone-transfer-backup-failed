@@ -45,7 +45,7 @@ fs.readdir(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH, function (err, files) {
                         process.exit(1);
                     }
                     
-                    files2.forEach(function (file2, index2) {
+                    files2.reverse().forEach(function (file2, index2) {
                         var loopTwoCurrentFileFolderCursor = path.join(loopOneCurrentFileFolderCursor, file2);
                     
                         fs.stat(loopTwoCurrentFileFolderCursor, function (error2, stat2) {
@@ -69,7 +69,7 @@ fs.readdir(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH, function (err, files) {
                                             process.exit(1);
                                         }
                                         
-                                        files3.forEach(function (file3, index3) {
+                                        files3.reverse().forEach(function (file3, index3) {
                                             var loopThreeCurrentFileFolderCursor = path.join(loopTwoCurrentFileFolderCursor, file3);
                                         
                                             fs.stat(loopThreeCurrentFileFolderCursor, function (error3, stat3) {

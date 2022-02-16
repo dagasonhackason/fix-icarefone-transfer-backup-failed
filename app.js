@@ -34,9 +34,7 @@ fs.readdir(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH, function (err, files) {
 
         const loopOneCurrent = path.basename(loopOneCurrentFileFolderCursor);
 
-        if (stat.isFile()) {
-            console.log("Now -> @ '%s' => file.", loopOneCurrentFileFolderCursor);
-        } else if (stat.isDirectory()) {
+        if (stat.isDirectory()) {
             console.log("Now -> @ '%s' => directory.", loopOneCurrentFileFolderCursor);
             console.log("About this directory =>", stat);
 

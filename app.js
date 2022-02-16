@@ -7,6 +7,7 @@ var process = require("process");
 
 const ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH = process.env.ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH;
 const MOBILEOS = process.env.MOBILEOS; // Multi OS Support Comming Soon.... Right now only Android backup fix is supported
+const COMPUTEROS = process.env.COMPUTEROS; // Multi Host Computer OS Support Comming Soon.... Right now only Windows Can run the script
 
 console.log("Selected OS is =>", MOBILEOS);
 
@@ -115,7 +116,36 @@ fs.readdir(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH, function (err, files) {
                                                     }
                                         
                                                     if(loopThreeCurrent === "WallPaper") {
-                                                        
+                                                        fs.readdir(loopThreeCurrentFileFolderCursor, function (err4, files4) {
+                                                            if (err4) {
+                                                                console.error("fs.readdir() -> Media Dir -> Couldn't hit the directory =>", err4);
+                                                                process.exit(1);
+                                                            }
+                                                            
+                                                            files4.reverse().forEach(function (file4, index4) {
+                                                                var loopFourCurrentFileFolderCursor = path.join(loopThreeCurrentFileFolderCursor, file4);
+                                                            
+                                                                fs.stat(loopThreeCurrentFileFolderCursor, function (error4, stat4) {
+                                                                    if (error4) {
+                                                                        console.error("Error stating file =>", error4);
+                                                                        return;
+                                                                    }
+                                                            
+                                                                    const loopFourCurrent = path.basename(loopFourCurrentFileFolderCursor);
+                                                            
+                                                                    if (stat4.isFile()) {
+                                                                        console.log("Now -> @ '%s' => file.", loopFourCurrentFileFolderCursor);
+                                                                        SELECTED_OS_OUTPUT_AREA.push({
+                                                                            "file_type":0,
+                                                                            "ios_device_path":null,
+                                                                            "domain":null,
+                                                                            "local_path":`${ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH}\\Android\\Media\\WallPaper\\${loopFourCurrent}`,
+                                                                            "an_device_path":`Media/WallPaper/${loopFourCurrent}`
+                                                                         });
+                                                                    }
+                                                                });
+                                                            });
+                                                        });
                                                     }
                                                 }
                                             });

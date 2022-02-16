@@ -25,7 +25,7 @@ fs.readdir(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH, { withFileTypes: true }, funct
 
   files.forEach(function (file, index) {
     // Make three passes and make the file complete
-    var loopOneCurrentFileFolderCursor = path.join(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH, file);
+    var loopOneCurrentFileFolderCursor = path.join(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH, file.name);
 
     fs.stat(loopOneCurrentFileFolderCursor, function (error, stat) {
         if (error) {
@@ -47,7 +47,7 @@ fs.readdir(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH, { withFileTypes: true }, funct
                     }
                     
                     files2.reverse().forEach(function (file2, index2) {
-                        var loopTwoCurrentFileFolderCursor = path.join(loopOneCurrentFileFolderCursor, file2);
+                        var loopTwoCurrentFileFolderCursor = path.join(loopOneCurrentFileFolderCursor, file2.name);
                     
                         fs.stat(loopTwoCurrentFileFolderCursor, function (error2, stat2) {
                             if (error2) {
@@ -71,7 +71,7 @@ fs.readdir(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH, { withFileTypes: true }, funct
                                         }
                                         
                                         files3.reverse().forEach(function (file3, index3) {
-                                            var loopThreeCurrentFileFolderCursor = path.join(loopTwoCurrentFileFolderCursor, file3);
+                                            var loopThreeCurrentFileFolderCursor = path.join(loopTwoCurrentFileFolderCursor, file3.name);
                                         
                                             fs.stat(loopThreeCurrentFileFolderCursor, function (error3, stat3) {
                                                 if (error3) {
@@ -123,7 +123,7 @@ fs.readdir(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH, { withFileTypes: true }, funct
                                                             }
                                                             
                                                             files4.forEach(function (file4, index4) {
-                                                                var loopFourCurrentFileFolderCursor = path.join(loopThreeCurrentFileFolderCursor, file4);
+                                                                var loopFourCurrentFileFolderCursor = path.join(loopThreeCurrentFileFolderCursor, file4.name);
                                                             
                                                                 fs.stat(loopThreeCurrentFileFolderCursor, function (error4, stat4) {
                                                                     if (error4) {

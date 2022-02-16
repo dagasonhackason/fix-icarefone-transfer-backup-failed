@@ -39,10 +39,9 @@ fs.readdir(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH, function (err, files) {
             console.log("About this directory =>", stat);
 
             if(loopOneCurrent === "Android") {
-                
-                fs.readdir(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH, function (err2, files2) {
+                fs.readdir(loopOneCurrentFileFolderCursor, function (err2, files2) {
                     if (err2) {
-                        console.error("fs.readdir() -> Android Dir -> Couldn't hit the directory =>", err);
+                        console.error("fs.readdir() -> Android Dir -> Couldn't hit the directory =>", err2);
                         process.exit(1);
                     }
                     
@@ -51,7 +50,7 @@ fs.readdir(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH, function (err, files) {
                     
                         fs.stat(loopTwoCurrentFileFolderCursor, function (error2, stat2) {
                             if (error2) {
-                                console.error("Error stating file =>", error);
+                                console.error("Error stating file =>", error2);
                                 return;
                             }
                     
@@ -64,14 +63,71 @@ fs.readdir(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH, function (err, files) {
                                 console.log("About this directory =>", stat2);
                     
                                 if(loopTwoCurrent === "Media") {
+                                    fs.readdir(loopTwoCurrentFileFolderCursor, function (err3, files3) {
+                                        if (err3) {
+                                            console.error("fs.readdir() -> Media Dir -> Couldn't hit the directory =>", err3);
+                                            process.exit(1);
+                                        }
+                                        
+                                        files3.forEach(function (file3, index3) {
+                                            var loopThreeCurrentFileFolderCursor = path.join(loopTwoCurrentFileFolderCursor, file3);
+                                        
+                                            fs.stat(loopThreeCurrentFileFolderCursor, function (error3, stat3) {
+                                                if (error3) {
+                                                    console.error("Error stating file =>", error3);
+                                                    return;
+                                                }
+                                        
+                                                const loopThreeCurrent = path.basename(loopThreeCurrentFileFolderCursor);
+                                        
+                                                if (stat3.isFile()) {
+                                                    console.log("Now -> @ '%s' => file.", loopThreeCurrentFileFolderCursor);
+                                                } else if (stat3.isDirectory()) {
+                                                    console.log("Now -> @ '%s' => directory.", loopThreeCurrentFileFolderCursor);
+                                                    console.log("About this directory =>", stat3);
+
+                                                    if(loopThreeCurrent === "WhatsApp Voice Notes") {
+                                                        
+                                                    }
+                    
+                                                    if(loopThreeCurrent === "WhatsApp Video") {
+                                                        
+                                                    }
+
+                                                    if(loopThreeCurrent === "WhatsApp Stickers") {
+                                                        
+                                                    }
+                    
+                                                    if(loopThreeCurrent === "WhatsApp Images") {
+                                                        
+                                                    }
+
+                                                    if(loopThreeCurrent === "WhatsApp Documents") {
+                                                        
+                                                    }
+                    
+                                                    if(loopThreeCurrent === "WhatsApp Audio") {
+                                                        
+                                                    }
+                    
+                                                    if(loopThreeCurrent === "WhatsApp Animated Gifs") {
+                                                        
+                                                    }
+                                        
+                                                    if(loopThreeCurrent === "WallPaper") {
+                                                        
+                                                    }
+                                                }
+                                            });
+                                        });
+                                    });
+                                }
+
+                                if(loopTwoCurrent === "Backups") {
                                     
                                 }
 
                                 if(loopTwoCurrent === "Databases") {
-                                    
-                                }
-
-                                if(loopTwoCurrent === "Backups") {
                                     
                                 }
                             }

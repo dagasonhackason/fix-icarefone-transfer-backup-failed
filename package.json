@@ -4,7 +4,8 @@
   "description": "If u get a backup failed in the iCareFone Transfer application, just use this script to fix everything after manually copying your backup to a safe location",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
   "dependencies": {
     "dotenv": "^16.0.0"

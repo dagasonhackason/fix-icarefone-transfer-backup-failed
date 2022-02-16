@@ -31,11 +31,11 @@ fs.readdir(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH, function (err, files) {
         }
 
         if (stat.isFile()) {
-            console.log("Now -> @ '%s' -> file => ", loopOneCurrentFileFolderCursor);
+            console.log("Now -> @ '%s' => file.", loopOneCurrentFileFolderCursor);
 
 
         } else if (stat.isDirectory()) {
-            console.log("Now -> @ '%s' -> directory =>", loopOneCurrentFileFolderCursor);
+            console.log("Now -> @ '%s' => directory.", loopOneCurrentFileFolderCursor);
         }
     });
   });

@@ -122,7 +122,7 @@ fs.readdir(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH, function (err, files) {
                                                                 process.exit(1);
                                                             }
                                                             
-                                                            files4.reverse().forEach(function (file4, index4) {
+                                                            files4.forEach(function (file4, index4) {
                                                                 var loopFourCurrentFileFolderCursor = path.join(loopThreeCurrentFileFolderCursor, file4);
                                                             
                                                                 fs.stat(loopThreeCurrentFileFolderCursor, function (error4, stat4) {
@@ -142,6 +142,8 @@ fs.readdir(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH, function (err, files) {
                                                                             "local_path":`${ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH}\\Android\\Media\\WallPaper\\${loopFourCurrent}`,
                                                                             "an_device_path":`Media/WallPaper/${loopFourCurrent}`
                                                                          });
+
+                                                                        console.log("loopFourCurrentFileFolderCursor -> WallPaper =>", SELECTED_OS_OUTPUT_AREA);
                                                                     }
                                                                 });
                                                             });

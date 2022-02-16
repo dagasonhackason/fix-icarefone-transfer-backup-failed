@@ -2,7 +2,7 @@
   "name": "fix-icarefone-transfer-backup-failed",
   "version": "1.0.0",
   "description": "If u get a backup failed in the iCareFone Transfer application, just use this script to fix everything after manually copying your backup to a safe location",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

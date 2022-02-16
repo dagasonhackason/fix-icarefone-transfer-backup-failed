@@ -15,8 +15,8 @@ const IOSLocalFilesMap = []; // Will hold all IOS data built from backup to comp
 
 const SELECTED_OS_OUTPUT_AREA = OS === "ANDROID" ? AndroidLocalFilesMap : IOSLocalFilesMap;
 
-// Loop through all the files in the backup directory
-fs.readdir(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH, function (err, files) {
+// Loop through all the files and folders in the backup directory
+fs.readdirSync(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH, function (err, files) {
   if (err) {
     console.error("fs.readdir() -> Couldn't hit the directory =>", err);
     process.exit(1);
@@ -39,35 +39,43 @@ fs.readdir(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH, function (err, files) {
             console.log("About this directory =>", stat);
 
             if(loopOneCurrent === "Android") {
-                files.forEach(function (file, index) {
-                    var loopTwoCurrentFileFolderCursor = path.join(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH, file);
                 
-                    fs.stat(loopTwoCurrentFileFolderCursor, function (error, stat) {
-                        if (error) {
-                            console.error("Error stating file =>", error);
-                            return;
-                        }
-                
-                        const loopTwoCurrent = path.basename(loopTwoCurrentFileFolderCursor);
-                
-                        if (stat.isFile()) {
-                            console.log("Now -> @ '%s' => file.", loopTwoCurrentFileFolderCursor);
-                        } else if (stat.isDirectory()) {
-                            console.log("Now -> @ '%s' => directory.", loopTwoCurrentFileFolderCursor);
-                            console.log("About this directory =>", stat);
-                
-                            if(loopTwoCurrent === "Media") {
-                                
+                fs.readdirSync(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH, function (err2, files2) {
+                    if (err2) {
+                        console.error("fs.readdir() -> Android Dir -> Couldn't hit the directory =>", err);
+                        process.exit(1);
+                    }
+                    
+                    files2.forEach(function (file2, index) {
+                        var loopTwoCurrentFileFolderCursor = path.join(loopOneCurrentFileFolderCursor, file2);
+                    
+                        fs.stat(loopTwoCurrentFileFolderCursor, function (error2, stat2) {
+                            if (error2) {
+                                console.error("Error stating file =>", error);
+                                return;
                             }
+                    
+                            const loopTwoCurrent = path.basename(loopTwoCurrentFileFolderCursor);
+                    
+                            if (stat2.isFile()) {
+                                console.log("Now -> @ '%s' => file.", loopTwoCurrentFileFolderCursor);
+                            } else if (stat2.isDirectory()) {
+                                console.log("Now -> @ '%s' => directory.", loopTwoCurrentFileFolderCursor);
+                                console.log("About this directory =>", stat2);
+                    
+                                if(loopTwoCurrent === "Media") {
+                                    
+                                }
 
-                            if(loopTwoCurrent === "Databases") {
-                                
-                            }
+                                if(loopTwoCurrent === "Databases") {
+                                    
+                                }
 
-                            if(loopTwoCurrent === "Backups") {
-                                
+                                if(loopTwoCurrent === "Backups") {
+                                    
+                                }
                             }
-                        }
+                        });
                     });
                 });
             }

@@ -11,6 +11,8 @@ const OS = process.env.OS; // Multi OS Support Comming Soon.... Right now only A
 const AndroidLocalFilesMap = []; // Will hold all Android data built from backup to complete the backup process even though it failed.
 const IOSLocalFilesMap = []; // Will hold all IOS data built from backup to complete the backup process even though it failed.
 
+const SELECTED_OS_OUTPUT_AREA = OS === "ANDROID" ? AndroidLocalFilesMap : IOSLocalFilesMap;
+
 // Loop through all the files in the backup directory
 fs.readdir(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH, function (err, files) {
   if (err) {

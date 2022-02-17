@@ -816,7 +816,7 @@ let a = new Promise((resa, reja) => {
 });
 
 Promise.all([a]).then(() => {
-    const buff = new Buffer.from(JSON.stringify(SELECTED_OS_OUTPUT_AREA, null, "\n"), 'utf-8');
+    const buff = new Buffer.from(JSON.stringify(SELECTED_OS_OUTPUT_AREA), 'utf-8');
 
     try {
         fs.writeFileSync(`${ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH}/IOSAnroidDecrypt/Android_LocalFilesMap.json`, buff);

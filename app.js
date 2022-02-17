@@ -27,6 +27,7 @@ function resolver(resolve) {
         resolve();
         var endTime = performance.now();
         console.log(`It took ${endTime - startTime} milliseconds`);
+        process.exit(0);
     } else {
         clearTimeout(timer);
     }
@@ -203,8 +204,8 @@ let a = new Promise((resa, reja) => {
                                                                                                     "file_type": 0,
                                                                                                     "ios_device_path": null,
                                                                                                     "domain": null,
-                                                                                                    "local_path": `C:${convertToWindowsPath(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH)}\\Android\\Media\\WhatsApp Voice Notes\\${getLastButOneItemInPath(loopFiveCurrentFileFolderCursor)}\\${loopFiveCurrent}`,
-                                                                                                    "an_device_path": `Media/WhatsApp Voice Notes/${getLastButOneItemInPath(loopFiveCurrentFileFolderCursor)}/${loopFiveCurrent}`
+                                                                                                    "local_path": `C:${convertToWindowsPath(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH)}\\Android\\Media\\WhatsApp Voice Notes\\${getLastButOneItemInPath(loopFiveCurrentFileFolderCursor.toString())}\\${loopFiveCurrent}`,
+                                                                                                    "an_device_path": `Media/WhatsApp Voice Notes/${getLastButOneItemInPath(loopFiveCurrentFileFolderCursor.toString())}/${loopFiveCurrent}`
                                                                                                 });
                                                                                             }
                                                                                         });

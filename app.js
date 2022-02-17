@@ -72,7 +72,7 @@ let a = new Promise((resa, reja) => {
                                 process.exit(1);
                             }
 
-                            totallength = totallength + files.length;
+                            totallength = totallength + files2.length;
                             files2.reverse().forEach(function (file2, index2) {
                                 itemsProcessed++;
                                 if(itemsProcessed === totallength) {
@@ -104,7 +104,7 @@ let a = new Promise((resa, reja) => {
                                                     process.exit(1);
                                                 }
 
-                                                totallength = totallength + files.length;
+                                                totallength = totallength + files3.length;
                                                 files3.reverse().forEach(function (file3, index3) {
                                                     itemsProcessed++;
                                                     if(itemsProcessed === totallength) {
@@ -136,7 +136,7 @@ let a = new Promise((resa, reja) => {
                                                                         process.exit(1);
                                                                     }
 
-                                                                    totallength = totallength + files.length;
+                                                                    totallength = totallength + files4.length;
                                                                     files4.forEach(function (file4, index4) {
                                                                         itemsProcessed++;
                                                                         if(itemsProcessed === totallength) {
@@ -172,7 +172,7 @@ let a = new Promise((resa, reja) => {
                                                                                         process.exit(1);
                                                                                     }
 
-                                                                                    totallength = totallength + files.length;
+                                                                                    totallength = totallength + files5.length;
                                                                                     files5.forEach(function (file5, index5) {
                                                                                         itemsProcessed++;
                                                                                         if(itemsProcessed === totallength) {
@@ -218,7 +218,7 @@ let a = new Promise((resa, reja) => {
                                                                         process.exit(1);
                                                                     }
 
-                                                                    totallength = totallength + files.length;
+                                                                    totallength = totallength + files4.length;
                                                                     files4.forEach(function (file4, index4) {
                                                                         itemsProcessed++;
                                                                         if(itemsProcessed === totallength) {
@@ -255,7 +255,7 @@ let a = new Promise((resa, reja) => {
                                                                                             process.exit(1);
                                                                                         }
 
-                                                                                        totallength = totallength + files.length;
+                                                                                        totallength = totallength + files5.length;
                                                                                         files5.forEach(function (file5, index5) {
                                                                                             itemsProcessed++;
                                                                                             if(itemsProcessed === totallength) {
@@ -302,7 +302,7 @@ let a = new Promise((resa, reja) => {
                                                                         process.exit(1);
                                                                     }
 
-                                                                    totallength = totallength + files.length;
+                                                                    totallength = totallength + files4.length;
                                                                     files4.forEach(function (file4, index4) {
                                                                         itemsProcessed++;
                                                                         if(itemsProcessed === totallength) {
@@ -344,7 +344,7 @@ let a = new Promise((resa, reja) => {
                                                                         process.exit(1);
                                                                     }
 
-                                                                    totallength = totallength + files.length;
+                                                                    totallength = totallength + files4.length;
                                                                     files4.forEach(function (file4, index4) {
                                                                         itemsProcessed++;
                                                                         if(itemsProcessed === totallength) {
@@ -381,7 +381,7 @@ let a = new Promise((resa, reja) => {
                                                                                             process.exit(1);
                                                                                         }
 
-                                                                                        totallength = totallength + files.length;
+                                                                                        totallength = totallength + files5.length;
                                                                                         files5.forEach(function (file5, index5) {
                                                                                             itemsProcessed++;
                                                                                             if(itemsProcessed === totallength) {
@@ -428,7 +428,7 @@ let a = new Promise((resa, reja) => {
                                                                         process.exit(1);
                                                                     }
 
-                                                                    totallength = totallength + files.length;
+                                                                    totallength = totallength + files4.length;
                                                                     files4.forEach(function (file4, index4) {
                                                                         itemsProcessed++;
                                                                         if(itemsProcessed === totallength) {
@@ -465,7 +465,7 @@ let a = new Promise((resa, reja) => {
                                                                                             process.exit(1);
                                                                                         }
 
-                                                                                        totallength = totallength + files.length;
+                                                                                        totallength = totallength + files5.length;
                                                                                         files5.forEach(function (file5, index5) {
                                                                                             itemsProcessed++;
                                                                                             if(itemsProcessed === totallength) {
@@ -512,7 +512,7 @@ let a = new Promise((resa, reja) => {
                                                                         process.exit(1);
                                                                     }
 
-                                                                    totallength = totallength + files.length;
+                                                                    totallength = totallength + files4.length;
                                                                     files4.forEach(function (file4, index4) {
                                                                         itemsProcessed++;
                                                                         if(itemsProcessed === totallength) {
@@ -549,7 +549,7 @@ let a = new Promise((resa, reja) => {
                                                                                             process.exit(1);
                                                                                         }
 
-                                                                                        totallength = totallength + files.length;
+                                                                                        totallength = totallength + files5.length;
                                                                                         files5.forEach(function (file5, index5) {
                                                                                             itemsProcessed++;
                                                                                             if(itemsProcessed === totallength) {
@@ -596,7 +596,7 @@ let a = new Promise((resa, reja) => {
                                                                         process.exit(1);
                                                                     }
 
-                                                                    totallength = totallength + files.length;
+                                                                    totallength = totallength + files4.length;
                                                                     files4.forEach(function (file4, index4) {
                                                                         itemsProcessed++;
                                                                         if(itemsProcessed === totallength) {
@@ -633,7 +633,7 @@ let a = new Promise((resa, reja) => {
                                                                                             process.exit(1);
                                                                                         }
 
-                                                                                        totallength = totallength + files.length;
+                                                                                        totallength = totallength + files5.length;
                                                                                         files5.forEach(function (file5, index5) {
                                                                                             itemsProcessed++;
                                                                                             if(itemsProcessed === totallength) {
@@ -680,7 +680,7 @@ let a = new Promise((resa, reja) => {
                                                                         process.exit(1);
                                                                     }
 
-                                                                    totallength = totallength + files.length;
+                                                                    totallength = totallength + files4.length;
                                                                     files4.forEach(function (file4, index4) {
                                                                         itemsProcessed++;
                                                                         if(itemsProcessed === totallength) {
@@ -719,40 +719,40 @@ let a = new Promise((resa, reja) => {
                                         }
 
                                         if (loopTwoCurrent === "Backups") {
-                                            await fs.readdir(loopThreeCurrentFileFolderCursor, {
+                                            await fs.readdir(loopTwoCurrentFileFolderCursor, {
                                                 withFileTypes: true
-                                            }, function (err4, files4) {
-                                                if (err4) {
-                                                    console.error("fs.readdir() -> Backups Dir -> Couldn't hit the directory =>", err4);
+                                            }, function (err3, files3) {
+                                                if (err3) {
+                                                    console.error("fs.readdir() -> Backups Dir -> Couldn't hit the directory =>", err3);
                                                     process.exit(1);
                                                 }
 
-                                                totallength = totallength + files.length;
-                                                files4.forEach(function (file4, index4) {
+                                                totallength = totallength + files3.length;
+                                                files3.forEach(function (file3, index3) {
                                                     itemsProcessed++;
                                                     if(itemsProcessed === totallength) {
                                                         timer = setTimeout(function () { resolver(resa); }, 1000);
                                                     }
                                                     
-                                                    var loopFourCurrentFileFolderCursor = path.join(loopThreeCurrentFileFolderCursor, file4.name);
+                                                    var loopThreeCurrentFileFolderCursor = path.join(loopTwoCurrentFileFolderCursor, file3.name);
 
-                                                    fs.stat(loopFourCurrentFileFolderCursor, async function (error4, stat4) {
-                                                        if (error4) {
-                                                            console.error("Error stating file =>", error4);
+                                                    fs.stat(loopThreeCurrentFileFolderCursor, async function (error3, stat3) {
+                                                        if (error3) {
+                                                            console.error("Error stating file =>", error3);
                                                             return;
                                                         }
 
-                                                        const loopFourCurrent = path.basename(loopFourCurrentFileFolderCursor);
+                                                        const loopThreeCurrent = path.basename(loopThreeCurrentFileFolderCursor);
 
-                                                        if (stat4.isFile()) {
+                                                        if (stat3.isFile()) {
 
-                                                            console.log("Now -> @ '%s' => file.", loopFourCurrentFileFolderCursor);
+                                                            console.log("Now -> @ '%s' => file.", loopThreeCurrentFileFolderCursor);
                                                             SELECTED_OS_OUTPUT_AREA.push({
                                                                 "file_type": 0,
                                                                 "ios_device_path": null,
                                                                 "domain": null,
-                                                                "local_path": `C:${convertToWindowsPath(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH)}\\Android\\Backups\\${loopFourCurrent}`,
-                                                                "an_device_path": `Backups/${loopFourCurrent}`
+                                                                "local_path": `C:${convertToWindowsPath(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH)}\\Android\\Backups\\${loopThreeCurrent}`,
+                                                                "an_device_path": `Backups/${loopThreeCurrent}`
                                                             });
                                                         }
                                                     });
@@ -761,40 +761,40 @@ let a = new Promise((resa, reja) => {
                                         }
 
                                         if (loopTwoCurrent === "Databases") {
-                                            await fs.readdir(loopThreeCurrentFileFolderCursor, {
+                                            await fs.readdir(loopTwoCurrentFileFolderCursor, {
                                                 withFileTypes: true
-                                            }, function (err4, files4) {
-                                                if (err4) {
-                                                    console.error("fs.readdir() -> Databases Dir -> Couldn't hit the directory =>", err4);
+                                            }, function (err3, files3) {
+                                                if (err3) {
+                                                    console.error("fs.readdir() -> Databases Dir -> Couldn't hit the directory =>", err3);
                                                     process.exit(1);
                                                 }
 
-                                                totallength = totallength + files.length;
-                                                files4.forEach(function (file4, index4) {
+                                                totallength = totallength + files3.length;
+                                                files3.forEach(function (file3, index3) {
                                                     itemsProcessed++;
                                                     if(itemsProcessed === totallength) {
                                                         timer = setTimeout(function () { resolver(resa); }, 1000);
                                                     }
                                                     
-                                                    var loopFourCurrentFileFolderCursor = path.join(loopThreeCurrentFileFolderCursor, file4.name);
+                                                    var loopThreeCurrentFileFolderCursor = path.join(loopTwoCurrentFileFolderCursor, file3.name);
 
-                                                    fs.stat(loopFourCurrentFileFolderCursor, async function (error4, stat4) {
-                                                        if (error4) {
-                                                            console.error("Error stating file =>", error4);
+                                                    fs.stat(loopThreeCurrentFileFolderCursor, async function (error3, stat3) {
+                                                        if (error3) {
+                                                            console.error("Error stating file =>", error3);
                                                             return;
                                                         }
 
-                                                        const loopFourCurrent = path.basename(loopFourCurrentFileFolderCursor);
+                                                        const loopThreeCurrent = path.basename(loopThreeCurrentFileFolderCursor);
 
-                                                        if (stat4.isFile()) {
+                                                        if (stat3.isFile()) {
 
-                                                            console.log("Now -> @ '%s' => file.", loopFourCurrentFileFolderCursor);
+                                                            console.log("Now -> @ '%s' => file.", loopThreeCurrentFileFolderCursor);
                                                             SELECTED_OS_OUTPUT_AREA.push({
                                                                 "file_type": 0,
                                                                 "ios_device_path": null,
                                                                 "domain": null,
-                                                                "local_path": `C:${convertToWindowsPath(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH)}\\Android\\Databases\\${loopFourCurrent}`,
-                                                                "an_device_path": `Databases/${loopFourCurrent}`
+                                                                "local_path": `C:${convertToWindowsPath(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH)}\\Android\\Databases\\${loopThreeCurrent}`,
+                                                                "an_device_path": `Databases/${loopThreeCurrent}`
                                                             });
                                                         }
                                                     });

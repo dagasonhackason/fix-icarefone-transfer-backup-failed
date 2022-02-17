@@ -98,7 +98,7 @@ async function runScript() {
                                                                 files4.forEach(function (file4, index4) {
                                                                     var loopFourCurrentFileFolderCursor = path.join(loopThreeCurrentFileFolderCursor, file4.name);
                                                                 
-                                                                    fs.stat(loopFourCurrentFileFolderCursor, function (error4, stat4) {
+                                                                    fs.stat(loopFourCurrentFileFolderCursor, async function (error4, stat4) {
                                                                         if (error4) {
                                                                             console.error("Error stating file =>", error4);
                                                                             return;
@@ -126,7 +126,7 @@ async function runScript() {
                                                                                 files5.forEach(function (file5, index5) {
                                                                                     var loopFiveCurrentFileFolderCursor = path.join(loopFourCurrentFileFolderCursor, file5.name);
                                                                                 
-                                                                                    fs.stat(loopFiveCurrentFileFolderCursor, function (error5, stat5) {
+                                                                                    fs.stat(loopFiveCurrentFileFolderCursor, async function (error5, stat5) {
                                                                                         if (error5) {
                                                                                             console.error("Error stating file =>", error5);
                                                                                             return;
@@ -164,7 +164,7 @@ async function runScript() {
                                                         //         files4.forEach(function (file4, index4) {
                                                         //             var loopFourCurrentFileFolderCursor = path.join(loopThreeCurrentFileFolderCursor, file4.name);
                                                                 
-                                                        //             fs.stat(loopFourCurrentFileFolderCursor, function (error4, stat4) {
+                                                        //             fs.stat(loopFourCurrentFileFolderCursor, async function (error4, stat4) {
                                                         //                 if (error4) {
                                                         //                     console.error("Error stating file =>", error4);
                                                         //                     return;
@@ -193,7 +193,7 @@ async function runScript() {
                                                         //                             files5.forEach(function (file5, index5) {
                                                         //                                 var loopFiveCurrentFileFolderCursor = path.join(loopFourCurrentFileFolderCursor, file5.name);
                                                                                     
-                                                        //                                 fs.stat(loopFiveCurrentFileFolderCursor, function (error5, stat5) {
+                                                        //                                 fs.stat(loopFiveCurrentFileFolderCursor, async function (error5, stat5) {
                                                         //                                     if (error5) {
                                                         //                                         console.error("Error stating file =>", error5);
                                                         //                                         return;
@@ -232,7 +232,7 @@ async function runScript() {
                                                         //         files4.forEach(function (file4, index4) {
                                                         //             var loopFourCurrentFileFolderCursor = path.join(loopThreeCurrentFileFolderCursor, file4.name);
                                                                 
-                                                        //             fs.stat(loopFourCurrentFileFolderCursor, function (error4, stat4) {
+                                                        //             fs.stat(loopFourCurrentFileFolderCursor, async function (error4, stat4) {
                                                         //                 if (error4) {
                                                         //                     console.error("Error stating file =>", error4);
                                                         //                     return;
@@ -266,7 +266,7 @@ async function runScript() {
                                                         //         files4.forEach(function (file4, index4) {
                                                         //             var loopFourCurrentFileFolderCursor = path.join(loopThreeCurrentFileFolderCursor, file4.name);
                                                                 
-                                                        //             fs.stat(loopFourCurrentFileFolderCursor, function (error4, stat4) {
+                                                        //             fs.stat(loopFourCurrentFileFolderCursor, async function (error4, stat4) {
                                                         //                 if (error4) {
                                                         //                     console.error("Error stating file =>", error4);
                                                         //                     return;
@@ -295,7 +295,7 @@ async function runScript() {
                                                         //                             files5.forEach(function (file5, index5) {
                                                         //                                 var loopFiveCurrentFileFolderCursor = path.join(loopFourCurrentFileFolderCursor, file5.name);
                                                                                     
-                                                        //                                 fs.stat(loopFiveCurrentFileFolderCursor, function (error5, stat5) {
+                                                        //                                 fs.stat(loopFiveCurrentFileFolderCursor, async function (error5, stat5) {
                                                         //                                     if (error5) {
                                                         //                                         console.error("Error stating file =>", error5);
                                                         //                                         return;
@@ -334,7 +334,7 @@ async function runScript() {
                                                                 files4.forEach(function (file4, index4) {
                                                                     var loopFourCurrentFileFolderCursor = path.join(loopThreeCurrentFileFolderCursor, file4.name);
                                                                 
-                                                                    fs.stat(loopFourCurrentFileFolderCursor, function (error4, stat4) {
+                                                                    fs.stat(loopFourCurrentFileFolderCursor, async function (error4, stat4) {
                                                                         if (error4) {
                                                                             console.error("Error stating file =>", error4);
                                                                             return;
@@ -363,7 +363,7 @@ async function runScript() {
                                                                                     files5.forEach(function (file5, index5) {
                                                                                         var loopFiveCurrentFileFolderCursor = path.join(loopFourCurrentFileFolderCursor, file5.name);
                                                                                     
-                                                                                        fs.stat(loopFiveCurrentFileFolderCursor, function (error5, stat5) {
+                                                                                        fs.stat(loopFiveCurrentFileFolderCursor, async function (error5, stat5) {
                                                                                             if (error5) {
                                                                                                 console.error("Error stating file =>", error5);
                                                                                                 return;
@@ -402,7 +402,7 @@ async function runScript() {
                                                         //         files4.forEach(function (file4, index4) {
                                                         //             var loopFourCurrentFileFolderCursor = path.join(loopThreeCurrentFileFolderCursor, file4.name);
                                                                 
-                                                        //             fs.stat(loopFourCurrentFileFolderCursor, function (error4, stat4) {
+                                                        //             fs.stat(loopFourCurrentFileFolderCursor, async function (error4, stat4) {
                                                         //                 if (error4) {
                                                         //                     console.error("Error stating file =>", error4);
                                                         //                     return;
@@ -431,7 +431,7 @@ async function runScript() {
                                                         //                             files5.forEach(function (file5, index5) {
                                                         //                                 var loopFiveCurrentFileFolderCursor = path.join(loopFourCurrentFileFolderCursor, file5.name);
                                                                                     
-                                                        //                                 fs.stat(loopFiveCurrentFileFolderCursor, function (error5, stat5) {
+                                                        //                                 fs.stat(loopFiveCurrentFileFolderCursor, async function (error5, stat5) {
                                                         //                                     if (error5) {
                                                         //                                         console.error("Error stating file =>", error5);
                                                         //                                         return;
@@ -470,7 +470,7 @@ async function runScript() {
                                                         //         files4.forEach(function (file4, index4) {
                                                         //             var loopFourCurrentFileFolderCursor = path.join(loopThreeCurrentFileFolderCursor, file4.name);
                                                                 
-                                                        //             fs.stat(loopFourCurrentFileFolderCursor, function (error4, stat4) {
+                                                        //             fs.stat(loopFourCurrentFileFolderCursor, async function (error4, stat4) {
                                                         //                 if (error4) {
                                                         //                     console.error("Error stating file =>", error4);
                                                         //                     return;
@@ -499,7 +499,7 @@ async function runScript() {
                                                         //                             files5.forEach(function (file5, index5) {
                                                         //                                 var loopFiveCurrentFileFolderCursor = path.join(loopFourCurrentFileFolderCursor, file5.name);
                                                                                     
-                                                        //                                 fs.stat(loopFiveCurrentFileFolderCursor, function (error5, stat5) {
+                                                        //                                 fs.stat(loopFiveCurrentFileFolderCursor, async function (error5, stat5) {
                                                         //                                     if (error5) {
                                                         //                                         console.error("Error stating file =>", error5);
                                                         //                                         return;
@@ -538,7 +538,7 @@ async function runScript() {
                                                         //         files4.forEach(function (file4, index4) {
                                                         //             var loopFourCurrentFileFolderCursor = path.join(loopThreeCurrentFileFolderCursor, file4.name);
                                                                 
-                                                        //             fs.stat(loopFourCurrentFileFolderCursor, function (error4, stat4) {
+                                                        //             fs.stat(loopFourCurrentFileFolderCursor, async function (error4, stat4) {
                                                         //                 if (error4) {
                                                         //                     console.error("Error stating file =>", error4);
                                                         //                     return;
@@ -577,7 +577,7 @@ async function runScript() {
                                 //         files4.forEach(function (file4, index4) {
                                 //             var loopFourCurrentFileFolderCursor = path.join(loopThreeCurrentFileFolderCursor, file4.name);
                                         
-                                //             fs.stat(loopFourCurrentFileFolderCursor, function (error4, stat4) {
+                                //             fs.stat(loopFourCurrentFileFolderCursor, async function (error4, stat4) {
                                 //                 if (error4) {
                                 //                     console.error("Error stating file =>", error4);
                                 //                     return;
@@ -611,7 +611,7 @@ async function runScript() {
                                 //         files4.forEach(function (file4, index4) {
                                 //             var loopFourCurrentFileFolderCursor = path.join(loopThreeCurrentFileFolderCursor, file4.name);
                                         
-                                //             fs.stat(loopFourCurrentFileFolderCursor, function (error4, stat4) {
+                                //             fs.stat(loopFourCurrentFileFolderCursor, async function (error4, stat4) {
                                 //                 if (error4) {
                                 //                     console.error("Error stating file =>", error4);
                                 //                     return;

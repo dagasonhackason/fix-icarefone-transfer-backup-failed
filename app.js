@@ -837,4 +837,3 @@ Promise.all([a]).then(() => {
 function convertToWindowsPath(str) {
 	return str.replace(/\//g, '\\');
 }
-

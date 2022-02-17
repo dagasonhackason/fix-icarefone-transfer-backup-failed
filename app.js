@@ -163,175 +163,185 @@ await fs.readdir(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH, {
 															});
 														}
 
-														// if(loopThreeCurrent === "WhatsApp Video") {
-														//     await fs.readdir(loopThreeCurrentFileFolderCursor, {withFileTypes: true}, function (err4, files4) {
-														//         if (err4) {
-														//             console.error("fs.readdir() -> WhatsApp Video Dir -> Couldn't hit the directory =>", err4);
-														//             process.exit(1);
-														//         }
+														if (loopThreeCurrent === "WhatsApp Video") {
+															await fs.readdir(loopThreeCurrentFileFolderCursor, {
+																withFileTypes: true
+															}, function (err4, files4) {
+																if (err4) {
+																	console.error("fs.readdir() -> WhatsApp Video Dir -> Couldn't hit the directory =>", err4);
+																	process.exit(1);
+																}
 
-														//         files4.forEach(function (file4, index4) {
-														//             var loopFourCurrentFileFolderCursor = path.join(loopThreeCurrentFileFolderCursor, file4.name);
+																files4.forEach(function (file4, index4) {
+																	var loopFourCurrentFileFolderCursor = path.join(loopThreeCurrentFileFolderCursor, file4.name);
 
-														//             fs.stat(loopFourCurrentFileFolderCursor, async function (error4, stat4) {
-														//                 if (error4) {
-														//                     console.error("Error stating file =>", error4);
-														//                     return;
-														//                 }
+																	fs.stat(loopFourCurrentFileFolderCursor, async function (error4, stat4) {
+																		if (error4) {
+																			console.error("Error stating file =>", error4);
+																			return;
+																		}
 
-														//                 const loopFourCurrent = path.basename(loopFourCurrentFileFolderCursor);
+																		const loopFourCurrent = path.basename(loopFourCurrentFileFolderCursor);
 
-														//                 if (stat4.isFile()) {
+																		if (stat4.isFile()) {
 
-														//                     console.log("Now -> @ '%s' => file.", loopFourCurrentFileFolderCursor);
-														//                     SELECTED_OS_OUTPUT_AREA.push({
-														//                         "file_type":0,
-														//                         "ios_device_path":null,
-														//                         "domain":null,
-														//                         "local_path":`C:${convertToWindowsPath(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH)}\\Android\\Media\\WhatsApp Video\\${loopFourCurrent}`,
-														//                         "an_device_path":`Media/WhatsApp Video/${loopFourCurrent}`
-														//                     });
-														//                 } else if(stat4.isDirectory()) {
-														//                     if (loopFourCurrent === "Sent") {
-														//                         await fs.readdir(loopFourCurrentFileFolderCursor, {withFileTypes: true}, function (err5, files5) {
-														//                             if (err5) {
-														//                                 console.error("fs.readdir() -> WhatsApp Video -> Sent Dir -> Couldn't hit the directory =>", err5);
-														//                                 process.exit(1);
-														//                             }
+																			console.log("Now -> @ '%s' => file.", loopFourCurrentFileFolderCursor);
+																			SELECTED_OS_OUTPUT_AREA.push({
+																				"file_type": 0,
+																				"ios_device_path": null,
+																				"domain": null,
+																				"local_path": `C:${convertToWindowsPath(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH)}\\Android\\Media\\WhatsApp Video\\${loopFourCurrent}`,
+																				"an_device_path": `Media/WhatsApp Video/${loopFourCurrent}`
+																			});
+																		} else if (stat4.isDirectory()) {
+																			if (loopFourCurrent === "Sent") {
+																				await fs.readdir(loopFourCurrentFileFolderCursor, {
+																					withFileTypes: true
+																				}, function (err5, files5) {
+																					if (err5) {
+																						console.error("fs.readdir() -> WhatsApp Video -> Sent Dir -> Couldn't hit the directory =>", err5);
+																						process.exit(1);
+																					}
 
-														//                             files5.forEach(function (file5, index5) {
-														//                                 var loopFiveCurrentFileFolderCursor = path.join(loopFourCurrentFileFolderCursor, file5.name);
+																					files5.forEach(function (file5, index5) {
+																						var loopFiveCurrentFileFolderCursor = path.join(loopFourCurrentFileFolderCursor, file5.name);
 
-														//                                 fs.stat(loopFiveCurrentFileFolderCursor, async function (error5, stat5) {
-														//                                     if (error5) {
-														//                                         console.error("Error stating file =>", error5);
-														//                                         return;
-														//                                     }
+																						fs.stat(loopFiveCurrentFileFolderCursor, async function (error5, stat5) {
+																							if (error5) {
+																								console.error("Error stating file =>", error5);
+																								return;
+																							}
 
-														//                                     const loopFiveCurrent = path.basename(loopFiveCurrentFileFolderCursor);
+																							const loopFiveCurrent = path.basename(loopFiveCurrentFileFolderCursor);
 
-														//                                     if (stat5.isFile()) {
+																							if (stat5.isFile()) {
 
-														//                                         console.log("Now -> @ '%s' => file.", loopFiveCurrentFileFolderCursor);
-														//                                         SELECTED_OS_OUTPUT_AREA.push({
-														//                                             "file_type":0,
-														//                                             "ios_device_path":null,
-														//                                             "domain":null,
-														//                                             "local_path":`C:${convertToWindowsPath(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH)}\\Android\\Media\\WhatsApp Video\\Sent\\${loopFiveCurrent}`,
-														//                                             "an_device_path":`Media/WhatsApp Video/Sent/${loopFiveCurrent}`
-														//                                         });
-														//                                     }
-														//                                 });
-														//                             });
-														//                         });
-														//                     }
-														//                 }
-														//             });
-														//         });
-														//     });
-														// }
+																								console.log("Now -> @ '%s' => file.", loopFiveCurrentFileFolderCursor);
+																								SELECTED_OS_OUTPUT_AREA.push({
+																									"file_type": 0,
+																									"ios_device_path": null,
+																									"domain": null,
+																									"local_path": `C:${convertToWindowsPath(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH)}\\Android\\Media\\WhatsApp Video\\Sent\\${loopFiveCurrent}`,
+																									"an_device_path": `Media/WhatsApp Video/Sent/${loopFiveCurrent}`
+																								});
+																							}
+																						});
+																					});
+																				});
+																			}
+																		}
+																	});
+																});
+															});
+														}
 
-														// if(loopThreeCurrent === "WhatsApp Stickers") {
-														//     await fs.readdir(loopThreeCurrentFileFolderCursor, {withFileTypes: true}, function (err4, files4) {
-														//         if (err4) {
-														//             console.error("fs.readdir() -> WhatsApp Stickers Dir -> Couldn't hit the directory =>", err4);
-														//             process.exit(1);
-														//         }
+														if (loopThreeCurrent === "WhatsApp Stickers") {
+															await fs.readdir(loopThreeCurrentFileFolderCursor, {
+																withFileTypes: true
+															}, function (err4, files4) {
+																if (err4) {
+																	console.error("fs.readdir() -> WhatsApp Stickers Dir -> Couldn't hit the directory =>", err4);
+																	process.exit(1);
+																}
 
-														//         files4.forEach(function (file4, index4) {
-														//             var loopFourCurrentFileFolderCursor = path.join(loopThreeCurrentFileFolderCursor, file4.name);
+																files4.forEach(function (file4, index4) {
+																	var loopFourCurrentFileFolderCursor = path.join(loopThreeCurrentFileFolderCursor, file4.name);
 
-														//             fs.stat(loopFourCurrentFileFolderCursor, async function (error4, stat4) {
-														//                 if (error4) {
-														//                     console.error("Error stating file =>", error4);
-														//                     return;
-														//                 }
+																	fs.stat(loopFourCurrentFileFolderCursor, async function (error4, stat4) {
+																		if (error4) {
+																			console.error("Error stating file =>", error4);
+																			return;
+																		}
 
-														//                 const loopFourCurrent = path.basename(loopFourCurrentFileFolderCursor);
+																		const loopFourCurrent = path.basename(loopFourCurrentFileFolderCursor);
 
-														//                 if (stat4.isFile()) {
+																		if (stat4.isFile()) {
 
-														//                     console.log("Now -> @ '%s' => file.", loopFourCurrentFileFolderCursor);
-														//                     SELECTED_OS_OUTPUT_AREA.push({
-														//                         "file_type":0,
-														//                         "ios_device_path":null,
-														//                         "domain":null,
-														//                         "local_path":`C:${convertToWindowsPath(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH)}\\Android\\Media\\WhatsApp Stickers\\${loopFourCurrent}`,
-														//                         "an_device_path":`Media/WhatsApp Stickers/${loopFourCurrent}`
-														//                     });
-														//                 }
-														//             });
-														//         });
-														//     });
-														// }
+																			console.log("Now -> @ '%s' => file.", loopFourCurrentFileFolderCursor);
+																			SELECTED_OS_OUTPUT_AREA.push({
+																				"file_type": 0,
+																				"ios_device_path": null,
+																				"domain": null,
+																				"local_path": `C:${convertToWindowsPath(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH)}\\Android\\Media\\WhatsApp Stickers\\${loopFourCurrent}`,
+																				"an_device_path": `Media/WhatsApp Stickers/${loopFourCurrent}`
+																			});
+																		}
+																	});
+																});
+															});
+														}
 
-														// if(loopThreeCurrent === "WhatsApp Images") {
-														//     await fs.readdir(loopThreeCurrentFileFolderCursor, {withFileTypes: true}, function (err4, files4) {
-														//         if (err4) {
-														//             console.error("fs.readdir() -> WhatsApp Images Dir -> Couldn't hit the directory =>", err4);
-														//             process.exit(1);
-														//         }
+														if (loopThreeCurrent === "WhatsApp Images") {
+															await fs.readdir(loopThreeCurrentFileFolderCursor, {
+																withFileTypes: true
+															}, function (err4, files4) {
+																if (err4) {
+																	console.error("fs.readdir() -> WhatsApp Images Dir -> Couldn't hit the directory =>", err4);
+																	process.exit(1);
+																}
 
-														//         files4.forEach(function (file4, index4) {
-														//             var loopFourCurrentFileFolderCursor = path.join(loopThreeCurrentFileFolderCursor, file4.name);
+																files4.forEach(function (file4, index4) {
+																	var loopFourCurrentFileFolderCursor = path.join(loopThreeCurrentFileFolderCursor, file4.name);
 
-														//             fs.stat(loopFourCurrentFileFolderCursor, async function (error4, stat4) {
-														//                 if (error4) {
-														//                     console.error("Error stating file =>", error4);
-														//                     return;
-														//                 }
+																	fs.stat(loopFourCurrentFileFolderCursor, async function (error4, stat4) {
+																		if (error4) {
+																			console.error("Error stating file =>", error4);
+																			return;
+																		}
 
-														//                 const loopFourCurrent = path.basename(loopFourCurrentFileFolderCursor);
+																		const loopFourCurrent = path.basename(loopFourCurrentFileFolderCursor);
 
-														//                 if (stat4.isFile()) {
+																		if (stat4.isFile()) {
 
-														//                     console.log("Now -> @ '%s' => file.", loopFourCurrentFileFolderCursor);
-														//                     SELECTED_OS_OUTPUT_AREA.push({
-														//                         "file_type":0,
-														//                         "ios_device_path":null,
-														//                         "domain":null,
-														//                         "local_path":`C:${convertToWindowsPath(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH)}\\Android\\Media\\WhatsApp Images\\${loopFourCurrent}`,
-														//                         "an_device_path":`Media/WhatsApp Images/${loopFourCurrent}`
-														//                     });
-														//                 } else if(stat4.isDirectory()) {
-														//                     if (loopFourCurrent === "Sent") {
-														//                         await fs.readdir(loopFourCurrentFileFolderCursor, {withFileTypes: true}, function (err5, files5) {
-														//                             if (err5) {
-														//                                 console.error("fs.readdir() -> WhatsApp Images -> Sent Dir -> Couldn't hit the directory =>", err5);
-														//                                 process.exit(1);
-														//                             }
+																			console.log("Now -> @ '%s' => file.", loopFourCurrentFileFolderCursor);
+																			SELECTED_OS_OUTPUT_AREA.push({
+																				"file_type": 0,
+																				"ios_device_path": null,
+																				"domain": null,
+																				"local_path": `C:${convertToWindowsPath(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH)}\\Android\\Media\\WhatsApp Images\\${loopFourCurrent}`,
+																				"an_device_path": `Media/WhatsApp Images/${loopFourCurrent}`
+																			});
+																		} else if (stat4.isDirectory()) {
+																			if (loopFourCurrent === "Sent") {
+																				await fs.readdir(loopFourCurrentFileFolderCursor, {
+																					withFileTypes: true
+																				}, function (err5, files5) {
+																					if (err5) {
+																						console.error("fs.readdir() -> WhatsApp Images -> Sent Dir -> Couldn't hit the directory =>", err5);
+																						process.exit(1);
+																					}
 
-														//                             files5.forEach(function (file5, index5) {
-														//                                 var loopFiveCurrentFileFolderCursor = path.join(loopFourCurrentFileFolderCursor, file5.name);
+																					files5.forEach(function (file5, index5) {
+																						var loopFiveCurrentFileFolderCursor = path.join(loopFourCurrentFileFolderCursor, file5.name);
 
-														//                                 fs.stat(loopFiveCurrentFileFolderCursor, async function (error5, stat5) {
-														//                                     if (error5) {
-														//                                         console.error("Error stating file =>", error5);
-														//                                         return;
-														//                                     }
+																						fs.stat(loopFiveCurrentFileFolderCursor, async function (error5, stat5) {
+																							if (error5) {
+																								console.error("Error stating file =>", error5);
+																								return;
+																							}
 
-														//                                     const loopFiveCurrent = path.basename(loopFiveCurrentFileFolderCursor);
+																							const loopFiveCurrent = path.basename(loopFiveCurrentFileFolderCursor);
 
-														//                                     if (stat5.isFile()) {
+																							if (stat5.isFile()) {
 
-														//                                         console.log("Now -> @ '%s' => file.", loopFiveCurrentFileFolderCursor);
-														//                                         SELECTED_OS_OUTPUT_AREA.push({
-														//                                             "file_type":0,
-														//                                             "ios_device_path":null,
-														//                                             "domain":null,
-														//                                             "local_path":`C:${convertToWindowsPath(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH)}\\Android\\Media\\WhatsApp Images\\Sent\\${loopFiveCurrent}`,
-														//                                             "an_device_path":`Media/WhatsApp Images/Sent/${loopFiveCurrent}`
-														//                                         });
-														//                                     }
-														//                                 });
-														//                             });
-														//                         });
-														//                     }
-														//                 }
-														//             });
-														//         });
-														//     });
-														// }
+																								console.log("Now -> @ '%s' => file.", loopFiveCurrentFileFolderCursor);
+																								SELECTED_OS_OUTPUT_AREA.push({
+																									"file_type": 0,
+																									"ios_device_path": null,
+																									"domain": null,
+																									"local_path": `C:${convertToWindowsPath(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH)}\\Android\\Media\\WhatsApp Images\\Sent\\${loopFiveCurrent}`,
+																									"an_device_path": `Media/WhatsApp Images/Sent/${loopFiveCurrent}`
+																								});
+																							}
+																						});
+																					});
+																				});
+																			}
+																		}
+																	});
+																});
+															});
+														}
 
 														if (loopThreeCurrent === "WhatsApp Documents") {
 															await fs.readdir(loopThreeCurrentFileFolderCursor, {
@@ -405,248 +415,262 @@ await fs.readdir(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH, {
 															});
 														}
 
-														// if(loopThreeCurrent === "WhatsApp Audio") {
-														//     await fs.readdir(loopThreeCurrentFileFolderCursor, {withFileTypes: true}, function (err4, files4) {
-														//         if (err4) {
-														//             console.error("fs.readdir() -> WhatsApp Audio Dir -> Couldn't hit the directory =>", err4);
-														//             process.exit(1);
-														//         }
+														if (loopThreeCurrent === "WhatsApp Audio") {
+															await fs.readdir(loopThreeCurrentFileFolderCursor, {
+																withFileTypes: true
+															}, function (err4, files4) {
+																if (err4) {
+																	console.error("fs.readdir() -> WhatsApp Audio Dir -> Couldn't hit the directory =>", err4);
+																	process.exit(1);
+																}
 
-														//         files4.forEach(function (file4, index4) {
-														//             var loopFourCurrentFileFolderCursor = path.join(loopThreeCurrentFileFolderCursor, file4.name);
+																files4.forEach(function (file4, index4) {
+																	var loopFourCurrentFileFolderCursor = path.join(loopThreeCurrentFileFolderCursor, file4.name);
 
-														//             fs.stat(loopFourCurrentFileFolderCursor, async function (error4, stat4) {
-														//                 if (error4) {
-														//                     console.error("Error stating file =>", error4);
-														//                     return;
-														//                 }
+																	fs.stat(loopFourCurrentFileFolderCursor, async function (error4, stat4) {
+																		if (error4) {
+																			console.error("Error stating file =>", error4);
+																			return;
+																		}
 
-														//                 const loopFourCurrent = path.basename(loopFourCurrentFileFolderCursor);
+																		const loopFourCurrent = path.basename(loopFourCurrentFileFolderCursor);
 
-														//                 if (stat4.isFile()) {
+																		if (stat4.isFile()) {
 
-														//                     console.log("Now -> @ '%s' => file.", loopFourCurrentFileFolderCursor);
-														//                     SELECTED_OS_OUTPUT_AREA.push({
-														//                         "file_type":0,
-														//                         "ios_device_path":null,
-														//                         "domain":null,
-														//                         "local_path":`C:${convertToWindowsPath(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH)}\\Android\\Media\\WhatsApp Audio\\${loopFourCurrent}`,
-														//                         "an_device_path":`Media/WhatsApp Audio/${loopFourCurrent}`
-														//                     });
-														//                 } else if(stat4.isDirectory()) {
-														//                     if (loopFourCurrent === "Sent") {
-														//                         await fs.readdir(loopFourCurrentFileFolderCursor, {withFileTypes: true}, function (err5, files5) {
-														//                             if (err5) {
-														//                                 console.error("fs.readdir() -> WhatsApp Audio -> Sent Dir -> Couldn't hit the directory =>", err5);
-														//                                 process.exit(1);
-														//                             }
+																			console.log("Now -> @ '%s' => file.", loopFourCurrentFileFolderCursor);
+																			SELECTED_OS_OUTPUT_AREA.push({
+																				"file_type": 0,
+																				"ios_device_path": null,
+																				"domain": null,
+																				"local_path": `C:${convertToWindowsPath(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH)}\\Android\\Media\\WhatsApp Audio\\${loopFourCurrent}`,
+																				"an_device_path": `Media/WhatsApp Audio/${loopFourCurrent}`
+																			});
+																		} else if (stat4.isDirectory()) {
+																			if (loopFourCurrent === "Sent") {
+																				await fs.readdir(loopFourCurrentFileFolderCursor, {
+																					withFileTypes: true
+																				}, function (err5, files5) {
+																					if (err5) {
+																						console.error("fs.readdir() -> WhatsApp Audio -> Sent Dir -> Couldn't hit the directory =>", err5);
+																						process.exit(1);
+																					}
 
-														//                             files5.forEach(function (file5, index5) {
-														//                                 var loopFiveCurrentFileFolderCursor = path.join(loopFourCurrentFileFolderCursor, file5.name);
+																					files5.forEach(function (file5, index5) {
+																						var loopFiveCurrentFileFolderCursor = path.join(loopFourCurrentFileFolderCursor, file5.name);
 
-														//                                 fs.stat(loopFiveCurrentFileFolderCursor, async function (error5, stat5) {
-														//                                     if (error5) {
-														//                                         console.error("Error stating file =>", error5);
-														//                                         return;
-														//                                     }
+																						fs.stat(loopFiveCurrentFileFolderCursor, async function (error5, stat5) {
+																							if (error5) {
+																								console.error("Error stating file =>", error5);
+																								return;
+																							}
 
-														//                                     const loopFiveCurrent = path.basename(loopFiveCurrentFileFolderCursor);
+																							const loopFiveCurrent = path.basename(loopFiveCurrentFileFolderCursor);
 
-														//                                     if (stat5.isFile()) {
+																							if (stat5.isFile()) {
 
-														//                                         console.log("Now -> @ '%s' => file.", loopFiveCurrentFileFolderCursor);
-														//                                         SELECTED_OS_OUTPUT_AREA.push({
-														//                                             "file_type":0,
-														//                                             "ios_device_path":null,
-														//                                             "domain":null,
-														//                                             "local_path":`C:${convertToWindowsPath(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH)}\\Android\\Media\\WhatsApp Audio\\Sent\\${loopFiveCurrent}`,
-														//                                             "an_device_path":`Media/WhatsApp Audio/Sent/${loopFiveCurrent}`
-														//                                         });
-														//                                     }
-														//                                 });
-														//                             });
-														//                         });
-														//                     }
-														//                 }
-														//             });
-														//         });
-														//     });
-														// }
+																								console.log("Now -> @ '%s' => file.", loopFiveCurrentFileFolderCursor);
+																								SELECTED_OS_OUTPUT_AREA.push({
+																									"file_type": 0,
+																									"ios_device_path": null,
+																									"domain": null,
+																									"local_path": `C:${convertToWindowsPath(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH)}\\Android\\Media\\WhatsApp Audio\\Sent\\${loopFiveCurrent}`,
+																									"an_device_path": `Media/WhatsApp Audio/Sent/${loopFiveCurrent}`
+																								});
+																							}
+																						});
+																					});
+																				});
+																			}
+																		}
+																	});
+																});
+															});
+														}
 
-														// if(loopThreeCurrent === "WhatsApp Animated Gifs") {
-														//     await fs.readdir(loopThreeCurrentFileFolderCursor, {withFileTypes: true}, function (err4, files4) {
-														//         if (err4) {
-														//             console.error("fs.readdir() -> WhatsApp Animated Gifs Dir -> Couldn't hit the directory =>", err4);
-														//             process.exit(1);
-														//         }
+														if (loopThreeCurrent === "WhatsApp Animated Gifs") {
+															await fs.readdir(loopThreeCurrentFileFolderCursor, {
+																withFileTypes: true
+															}, function (err4, files4) {
+																if (err4) {
+																	console.error("fs.readdir() -> WhatsApp Animated Gifs Dir -> Couldn't hit the directory =>", err4);
+																	process.exit(1);
+																}
 
-														//         files4.forEach(function (file4, index4) {
-														//             var loopFourCurrentFileFolderCursor = path.join(loopThreeCurrentFileFolderCursor, file4.name);
+																files4.forEach(function (file4, index4) {
+																	var loopFourCurrentFileFolderCursor = path.join(loopThreeCurrentFileFolderCursor, file4.name);
 
-														//             fs.stat(loopFourCurrentFileFolderCursor, async function (error4, stat4) {
-														//                 if (error4) {
-														//                     console.error("Error stating file =>", error4);
-														//                     return;
-														//                 }
+																	fs.stat(loopFourCurrentFileFolderCursor, async function (error4, stat4) {
+																		if (error4) {
+																			console.error("Error stating file =>", error4);
+																			return;
+																		}
 
-														//                 const loopFourCurrent = path.basename(loopFourCurrentFileFolderCursor);
+																		const loopFourCurrent = path.basename(loopFourCurrentFileFolderCursor);
 
-														//                 if (stat4.isFile()) {
+																		if (stat4.isFile()) {
 
-														//                     console.log("Now -> @ '%s' => file.", loopFourCurrentFileFolderCursor);
-														//                     SELECTED_OS_OUTPUT_AREA.push({
-														//                         "file_type":0,
-														//                         "ios_device_path":null,
-														//                         "domain":null,
-														//                         "local_path":`C:${convertToWindowsPath(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH)}\\Android\\Media\\WhatsApp Animated Gifs\\${loopFourCurrent}`,
-														//                         "an_device_path":`Media/WhatsApp Animated Gifs/${loopFourCurrent}`
-														//                     });
-														//                 } else if(stat4.isDirectory()) {
-														//                     if (loopFourCurrent === "Sent") {
-														//                         await fs.readdir(loopFourCurrentFileFolderCursor, {withFileTypes: true}, function (err5, files5) {
-														//                             if (err5) {
-														//                                 console.error("fs.readdir() -> WhatsApp Animated Gifs -> Sent Dir -> Couldn't hit the directory =>", err5);
-														//                                 process.exit(1);
-														//                             }
+																			console.log("Now -> @ '%s' => file.", loopFourCurrentFileFolderCursor);
+																			SELECTED_OS_OUTPUT_AREA.push({
+																				"file_type": 0,
+																				"ios_device_path": null,
+																				"domain": null,
+																				"local_path": `C:${convertToWindowsPath(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH)}\\Android\\Media\\WhatsApp Animated Gifs\\${loopFourCurrent}`,
+																				"an_device_path": `Media/WhatsApp Animated Gifs/${loopFourCurrent}`
+																			});
+																		} else if (stat4.isDirectory()) {
+																			if (loopFourCurrent === "Sent") {
+																				await fs.readdir(loopFourCurrentFileFolderCursor, {
+																					withFileTypes: true
+																				}, function (err5, files5) {
+																					if (err5) {
+																						console.error("fs.readdir() -> WhatsApp Animated Gifs -> Sent Dir -> Couldn't hit the directory =>", err5);
+																						process.exit(1);
+																					}
 
-														//                             files5.forEach(function (file5, index5) {
-														//                                 var loopFiveCurrentFileFolderCursor = path.join(loopFourCurrentFileFolderCursor, file5.name);
+																					files5.forEach(function (file5, index5) {
+																						var loopFiveCurrentFileFolderCursor = path.join(loopFourCurrentFileFolderCursor, file5.name);
 
-														//                                 fs.stat(loopFiveCurrentFileFolderCursor, async function (error5, stat5) {
-														//                                     if (error5) {
-														//                                         console.error("Error stating file =>", error5);
-														//                                         return;
-														//                                     }
+																						fs.stat(loopFiveCurrentFileFolderCursor, async function (error5, stat5) {
+																							if (error5) {
+																								console.error("Error stating file =>", error5);
+																								return;
+																							}
 
-														//                                     const loopFiveCurrent = path.basename(loopFiveCurrentFileFolderCursor);
+																							const loopFiveCurrent = path.basename(loopFiveCurrentFileFolderCursor);
 
-														//                                     if (stat5.isFile()) {
+																							if (stat5.isFile()) {
 
-														//                                         console.log("Now -> @ '%s' => file.", loopFiveCurrentFileFolderCursor);
-														//                                         SELECTED_OS_OUTPUT_AREA.push({
-														//                                             "file_type":0,
-														//                                             "ios_device_path":null,
-														//                                             "domain":null,
-														//                                             "local_path":`C:${convertToWindowsPath(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH)}\\Android\\Media\\WhatsApp Animated Gifs\\Sent\\${loopFiveCurrent}`,
-														//                                             "an_device_path":`Media/WhatsApp Animated Gifs/Sent/${loopFiveCurrent}`
-														//                                         });
-														//                                     }
-														//                                 });
-														//                             });
-														//                         });
-														//                     }
-														//                 }
-														//             });
-														//         });
-														//     });
-														// }
+																								console.log("Now -> @ '%s' => file.", loopFiveCurrentFileFolderCursor);
+																								SELECTED_OS_OUTPUT_AREA.push({
+																									"file_type": 0,
+																									"ios_device_path": null,
+																									"domain": null,
+																									"local_path": `C:${convertToWindowsPath(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH)}\\Android\\Media\\WhatsApp Animated Gifs\\Sent\\${loopFiveCurrent}`,
+																									"an_device_path": `Media/WhatsApp Animated Gifs/Sent/${loopFiveCurrent}`
+																								});
+																							}
+																						});
+																					});
+																				});
+																			}
+																		}
+																	});
+																});
+															});
+														}
 
-														// if(loopThreeCurrent === "WallPaper") {                                                                                                                                                                                                
-														//     await fs.readdir(loopThreeCurrentFileFolderCursor, {withFileTypes: true}, function (err4, files4) {
-														//         if (err4) {
-														//             console.error("fs.readdir() -> WallPaper Dir -> Couldn't hit the directory =>", err4);
-														//             process.exit(1);
-														//         }
+														if (loopThreeCurrent === "WallPaper") {
+															await fs.readdir(loopThreeCurrentFileFolderCursor, {
+																withFileTypes: true
+															}, function (err4, files4) {
+																if (err4) {
+																	console.error("fs.readdir() -> WallPaper Dir -> Couldn't hit the directory =>", err4);
+																	process.exit(1);
+																}
 
-														//         files4.forEach(function (file4, index4) {
-														//             var loopFourCurrentFileFolderCursor = path.join(loopThreeCurrentFileFolderCursor, file4.name);
+																files4.forEach(function (file4, index4) {
+																	var loopFourCurrentFileFolderCursor = path.join(loopThreeCurrentFileFolderCursor, file4.name);
 
-														//             fs.stat(loopFourCurrentFileFolderCursor, async function (error4, stat4) {
-														//                 if (error4) {
-														//                     console.error("Error stating file =>", error4);
-														//                     return;
-														//                 }
+																	fs.stat(loopFourCurrentFileFolderCursor, async function (error4, stat4) {
+																		if (error4) {
+																			console.error("Error stating file =>", error4);
+																			return;
+																		}
 
-														//                 const loopFourCurrent = path.basename(loopFourCurrentFileFolderCursor);
+																		const loopFourCurrent = path.basename(loopFourCurrentFileFolderCursor);
 
-														//                 if (stat4.isFile()) {
+																		if (stat4.isFile()) {
 
-														//                     console.log("Now -> @ '%s' => file.", loopFourCurrentFileFolderCursor);
-														//                     SELECTED_OS_OUTPUT_AREA.push({
-														//                         "file_type":0,
-														//                         "ios_device_path":null,
-														//                         "domain":null,
-														//                         "local_path":`C:${convertToWindowsPath(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH)}\\Android\\Media\\WallPaper\\${loopFourCurrent}`,
-														//                         "an_device_path":`Media/WallPaper/${loopFourCurrent}`
-														//                     });
-														//                 }
-														//             });
-														//         });
-														//     });
-														// }
+																			console.log("Now -> @ '%s' => file.", loopFourCurrentFileFolderCursor);
+																			SELECTED_OS_OUTPUT_AREA.push({
+																				"file_type": 0,
+																				"ios_device_path": null,
+																				"domain": null,
+																				"local_path": `C:${convertToWindowsPath(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH)}\\Android\\Media\\WallPaper\\${loopFourCurrent}`,
+																				"an_device_path": `Media/WallPaper/${loopFourCurrent}`
+																			});
+																		}
+																	});
+																});
+															});
+														}
 													}
 												});
 											});
 										});
 									}
 
-									//   if(loopTwoCurrent === "Backups") {
-									//     await fs.readdir(loopThreeCurrentFileFolderCursor, {withFileTypes: true}, function (err4, files4) {
-									//         if (err4) {
-									//             console.error("fs.readdir() -> Backups Dir -> Couldn't hit the directory =>", err4);
-									//             process.exit(1);
-									//         }
+									if (loopTwoCurrent === "Backups") {
+										await fs.readdir(loopThreeCurrentFileFolderCursor, {
+											withFileTypes: true
+										}, function (err4, files4) {
+											if (err4) {
+												console.error("fs.readdir() -> Backups Dir -> Couldn't hit the directory =>", err4);
+												process.exit(1);
+											}
 
-									//         files4.forEach(function (file4, index4) {
-									//             var loopFourCurrentFileFolderCursor = path.join(loopThreeCurrentFileFolderCursor, file4.name);
+											files4.forEach(function (file4, index4) {
+												var loopFourCurrentFileFolderCursor = path.join(loopThreeCurrentFileFolderCursor, file4.name);
 
-									//             fs.stat(loopFourCurrentFileFolderCursor, async function (error4, stat4) {
-									//                 if (error4) {
-									//                     console.error("Error stating file =>", error4);
-									//                     return;
-									//                 }
+												fs.stat(loopFourCurrentFileFolderCursor, async function (error4, stat4) {
+													if (error4) {
+														console.error("Error stating file =>", error4);
+														return;
+													}
 
-									//                 const loopFourCurrent = path.basename(loopFourCurrentFileFolderCursor);
+													const loopFourCurrent = path.basename(loopFourCurrentFileFolderCursor);
 
-									//                 if (stat4.isFile()) {
+													if (stat4.isFile()) {
 
-									//                     console.log("Now -> @ '%s' => file.", loopFourCurrentFileFolderCursor);
-									//                     SELECTED_OS_OUTPUT_AREA.push({
-									//                         "file_type":0,
-									//                         "ios_device_path":null,
-									//                         "domain":null,
-									//                         "local_path":`C:${convertToWindowsPath(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH)}\\Android\\Backups\\${loopFourCurrent}`,
-									//                         "an_device_path":`Backups/${loopFourCurrent}`
-									//                     });
-									//                 }
-									//             });
-									//         });
-									//     });
-									//   }
+														console.log("Now -> @ '%s' => file.", loopFourCurrentFileFolderCursor);
+														SELECTED_OS_OUTPUT_AREA.push({
+															"file_type": 0,
+															"ios_device_path": null,
+															"domain": null,
+															"local_path": `C:${convertToWindowsPath(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH)}\\Android\\Backups\\${loopFourCurrent}`,
+															"an_device_path": `Backups/${loopFourCurrent}`
+														});
+													}
+												});
+											});
+										});
+									}
 
-									//   if(loopTwoCurrent === "Databases") {
-									//     await fs.readdir(loopThreeCurrentFileFolderCursor, {withFileTypes: true}, function (err4, files4) {
-									//         if (err4) {
-									//             console.error("fs.readdir() -> Databases Dir -> Couldn't hit the directory =>", err4);
-									//             process.exit(1);
-									//         }
+									if (loopTwoCurrent === "Databases") {
+										await fs.readdir(loopThreeCurrentFileFolderCursor, {
+											withFileTypes: true
+										}, function (err4, files4) {
+											if (err4) {
+												console.error("fs.readdir() -> Databases Dir -> Couldn't hit the directory =>", err4);
+												process.exit(1);
+											}
 
-									//         files4.forEach(function (file4, index4) {
-									//             var loopFourCurrentFileFolderCursor = path.join(loopThreeCurrentFileFolderCursor, file4.name);
+											files4.forEach(function (file4, index4) {
+												var loopFourCurrentFileFolderCursor = path.join(loopThreeCurrentFileFolderCursor, file4.name);
 
-									//             fs.stat(loopFourCurrentFileFolderCursor, async function (error4, stat4) {
-									//                 if (error4) {
-									//                     console.error("Error stating file =>", error4);
-									//                     return;
-									//                 }
+												fs.stat(loopFourCurrentFileFolderCursor, async function (error4, stat4) {
+													if (error4) {
+														console.error("Error stating file =>", error4);
+														return;
+													}
 
-									//                 const loopFourCurrent = path.basename(loopFourCurrentFileFolderCursor);
+													const loopFourCurrent = path.basename(loopFourCurrentFileFolderCursor);
 
-									//                 if (stat4.isFile()) {
+													if (stat4.isFile()) {
 
-									//                     console.log("Now -> @ '%s' => file.", loopFourCurrentFileFolderCursor);
-									//                     SELECTED_OS_OUTPUT_AREA.push({
-									//                         "file_type":0,
-									//                         "ios_device_path":null,
-									//                         "domain":null,
-									//                         "local_path":`C:${convertToWindowsPath(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH)}\\Android\\Databases\\${loopFourCurrent}`,
-									//                         "an_device_path":`Databases/${loopFourCurrent}`
-									//                     });
-									//                 }
-									//             });
-									//         });
-									//     });
-									//   }
+														console.log("Now -> @ '%s' => file.", loopFourCurrentFileFolderCursor);
+														SELECTED_OS_OUTPUT_AREA.push({
+															"file_type": 0,
+															"ios_device_path": null,
+															"domain": null,
+															"local_path": `C:${convertToWindowsPath(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH)}\\Android\\Databases\\${loopFourCurrent}`,
+															"an_device_path": `Databases/${loopFourCurrent}`
+														});
+													}
+												});
+											});
+										});
+									}
 								}
 							});
 						});
@@ -659,14 +683,14 @@ await fs.readdir(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH, {
 
 async function init() {
 	runScript().then(() => {
-		// const buff = new Buffer.from(JSON.stringify(SELECTED_OS_OUTPUT_AREA), 'utf-8');
+		const buff = new Buffer.from(JSON.stringify(SELECTED_OS_OUTPUT_AREA), 'utf-8');
 
-		// try {
-		//     fs.writeFileSync(`${ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH}/IOSAnroidDecrypt/Android_LocalFilesMap.json`, buff);
-		//     console.log("Backup Record Fix File Generated Successfully");
-		// } catch(e) {
-		//     console.error("Faile to Write Backup Record Fix File", e);
-		// }
+		try {
+			fs.writeFileSync(`${ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH}/IOSAnroidDecrypt/Android_LocalFilesMap.json`, buff);
+			console.log("Backup Record Fix File Generated Successfully");
+		} catch (e) {
+			console.error("Faile to Write Backup Record Fix File", e);
+		}
 	});
 }
 

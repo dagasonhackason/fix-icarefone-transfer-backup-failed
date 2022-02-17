@@ -650,7 +650,7 @@ async function init(){
         const buff = new Buffer.from(JSON.stringify(SELECTED_OS_OUTPUT_AREA), 'utf-8');
 
         try {
-            await fs.writeFileSync(`${ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH}/IOSAnroidDecrypt/Android_LocalFilesMap.json`, buff);
+            fs.writeFileSync(`${ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH}/IOSAnroidDecrypt/Android_LocalFilesMap.json`, buff);
             console.log("Backup Record Fix File Generated Successfully");
         } catch(e) {
             console.error("Faile to Write Backup Record Fix File", e);

@@ -25,9 +25,6 @@ let timer;
 function resolver(resolve) {
     if(itemsProcessed === totallength) {
         resolve();
-        var endTime = performance.now();
-        console.log(`It took ${endTime - startTime} milliseconds`);
-        process.exit(0);
     } else {
         clearTimeout(timer);
     }
@@ -53,7 +50,7 @@ let a = new Promise((resa, reja) => {
         files.forEach(function (file, index) {
             itemsProcessed++;
             if(itemsProcessed === totallength) {
-                timer = setTimeout(function () { resolver(resa); }, 125094);
+                timer = setTimeout(function () { resolver(resa); }, 240000);
             }
 
             const loopOneCurrentFileFolderCursor = path.join(ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH, file.name);
@@ -84,7 +81,7 @@ let a = new Promise((resa, reja) => {
                             files2.reverse().forEach(function (file2, index2) {
                                 itemsProcessed++;
                                 if(itemsProcessed === totallength) {
-                                    timer = setTimeout(function () { resolver(resa); }, 125094);
+                                    timer = setTimeout(function () { resolver(resa); }, 240000);
                                 }
                                 
                                 const loopTwoCurrentFileFolderCursor = path.join(loopOneCurrentFileFolderCursor, file2.name);
@@ -116,7 +113,7 @@ let a = new Promise((resa, reja) => {
                                                 files3.reverse().forEach(function (file3, index3) {
                                                     itemsProcessed++;
                                                     if(itemsProcessed === totallength) {
-                                                        timer = setTimeout(function () { resolver(resa); }, 125094);
+                                                        timer = setTimeout(function () { resolver(resa); }, 240000);
                                                     }
                                                     
                                                     const loopThreeCurrentFileFolderCursor = path.join(loopTwoCurrentFileFolderCursor, file3.name);
@@ -148,7 +145,7 @@ let a = new Promise((resa, reja) => {
                                                                     files4.forEach(function (file4, index4) {
                                                                         itemsProcessed++;
                                                                         if(itemsProcessed === totallength) {
-                                                                            timer = setTimeout(function () { resolver(resa); }, 125094);
+                                                                            timer = setTimeout(function () { resolver(resa); }, 240000);
                                                                         }
             
                                                                         const loopFourCurrentFileFolderCursor = path.join(loopThreeCurrentFileFolderCursor, file4.name);
@@ -184,7 +181,7 @@ let a = new Promise((resa, reja) => {
                                                                                     files5.forEach(function (file5, index5) {
                                                                                         itemsProcessed++;
                                                                                         if(itemsProcessed === totallength) {
-                                                                                            timer = setTimeout(function () { resolver(resa); }, 125094);
+                                                                                            timer = setTimeout(function () { resolver(resa); }, 240000);
                                                                                         }
                                                                                         
                                                                                         const loopFiveCurrentFileFolderCursor = path.join(loopFourCurrentFileFolderCursor, file5.name);
@@ -230,7 +227,7 @@ let a = new Promise((resa, reja) => {
                                                                     files4.forEach(function (file4, index4) {
                                                                         itemsProcessed++;
                                                                         if(itemsProcessed === totallength) {
-                                                                            timer = setTimeout(function () { resolver(resa); }, 125094);
+                                                                            timer = setTimeout(function () { resolver(resa); }, 240000);
                                                                         }
                                                                         
                                                                         const loopFourCurrentFileFolderCursor = path.join(loopThreeCurrentFileFolderCursor, file4.name);
@@ -267,7 +264,7 @@ let a = new Promise((resa, reja) => {
                                                                                         files5.forEach(function (file5, index5) {
                                                                                             itemsProcessed++;
                                                                                             if(itemsProcessed === totallength) {
-                                                                                                timer = setTimeout(function () { resolver(resa); }, 125094);
+                                                                                                timer = setTimeout(function () { resolver(resa); }, 240000);
                                                                                             }
                                                                                             
                                                                                             const loopFiveCurrentFileFolderCursor = path.join(loopFourCurrentFileFolderCursor, file5.name);
@@ -314,7 +311,7 @@ let a = new Promise((resa, reja) => {
                                                                     files4.forEach(function (file4, index4) {
                                                                         itemsProcessed++;
                                                                         if(itemsProcessed === totallength) {
-                                                                            timer = setTimeout(function () { resolver(resa); }, 125094);
+                                                                            timer = setTimeout(function () { resolver(resa); }, 240000);
                                                                         }
                                                                         
                                                                         const loopFourCurrentFileFolderCursor = path.join(loopThreeCurrentFileFolderCursor, file4.name);
@@ -356,7 +353,7 @@ let a = new Promise((resa, reja) => {
                                                                     files4.forEach(function (file4, index4) {
                                                                         itemsProcessed++;
                                                                         if(itemsProcessed === totallength) {
-                                                                            timer = setTimeout(function () { resolver(resa); }, 125094);
+                                                                            timer = setTimeout(function () { resolver(resa); }, 240000);
                                                                         }
             
                                                                         const loopFourCurrentFileFolderCursor = path.join(loopThreeCurrentFileFolderCursor, file4.name);
@@ -393,7 +390,7 @@ let a = new Promise((resa, reja) => {
                                                                                         files5.forEach(function (file5, index5) {
                                                                                             itemsProcessed++;
                                                                                             if(itemsProcessed === totallength) {
-                                                                                                timer = setTimeout(function () { resolver(resa); }, 125094);
+                                                                                                timer = setTimeout(function () { resolver(resa); }, 240000);
                                                                                             }
                                                                                             
                                                                                             const loopFiveCurrentFileFolderCursor = path.join(loopFourCurrentFileFolderCursor, file5.name);
@@ -440,7 +437,7 @@ let a = new Promise((resa, reja) => {
                                                                     files4.forEach(function (file4, index4) {
                                                                         itemsProcessed++;
                                                                         if(itemsProcessed === totallength) {
-                                                                            timer = setTimeout(function () { resolver(resa); }, 125094);
+                                                                            timer = setTimeout(function () { resolver(resa); }, 240000);
                                                                         }
                                                                         
                                                                         const loopFourCurrentFileFolderCursor = path.join(loopThreeCurrentFileFolderCursor, file4.name);
@@ -477,7 +474,7 @@ let a = new Promise((resa, reja) => {
                                                                                         files5.forEach(function (file5, index5) {
                                                                                             itemsProcessed++;
                                                                                             if(itemsProcessed === totallength) {
-                                                                                                timer = setTimeout(function () { resolver(resa); }, 125094);
+                                                                                                timer = setTimeout(function () { resolver(resa); }, 240000);
                                                                                             }
                                                                                             
                                                                                             const loopFiveCurrentFileFolderCursor = path.join(loopFourCurrentFileFolderCursor, file5.name);
@@ -524,7 +521,7 @@ let a = new Promise((resa, reja) => {
                                                                     files4.forEach(function (file4, index4) {
                                                                         itemsProcessed++;
                                                                         if(itemsProcessed === totallength) {
-                                                                            timer = setTimeout(function () { resolver(resa); }, 125094);
+                                                                            timer = setTimeout(function () { resolver(resa); }, 240000);
                                                                         }
                                                                         
                                                                         const loopFourCurrentFileFolderCursor = path.join(loopThreeCurrentFileFolderCursor, file4.name);
@@ -561,7 +558,7 @@ let a = new Promise((resa, reja) => {
                                                                                         files5.forEach(function (file5, index5) {
                                                                                             itemsProcessed++;
                                                                                             if(itemsProcessed === totallength) {
-                                                                                                timer = setTimeout(function () { resolver(resa); }, 125094);
+                                                                                                timer = setTimeout(function () { resolver(resa); }, 240000);
                                                                                             }
                                                                                             
                                                                                             const loopFiveCurrentFileFolderCursor = path.join(loopFourCurrentFileFolderCursor, file5.name);
@@ -608,7 +605,7 @@ let a = new Promise((resa, reja) => {
                                                                     files4.forEach(function (file4, index4) {
                                                                         itemsProcessed++;
                                                                         if(itemsProcessed === totallength) {
-                                                                            timer = setTimeout(function () { resolver(resa); }, 125094);
+                                                                            timer = setTimeout(function () { resolver(resa); }, 240000);
                                                                         }
                                                                         
                                                                         const loopFourCurrentFileFolderCursor = path.join(loopThreeCurrentFileFolderCursor, file4.name);
@@ -645,7 +642,7 @@ let a = new Promise((resa, reja) => {
                                                                                         files5.forEach(function (file5, index5) {
                                                                                             itemsProcessed++;
                                                                                             if(itemsProcessed === totallength) {
-                                                                                                timer = setTimeout(function () { resolver(resa); }, 125094);
+                                                                                                timer = setTimeout(function () { resolver(resa); }, 240000);
                                                                                             }
                                                                                             
                                                                                             const loopFiveCurrentFileFolderCursor = path.join(loopFourCurrentFileFolderCursor, file5.name);
@@ -692,7 +689,7 @@ let a = new Promise((resa, reja) => {
                                                                     files4.forEach(function (file4, index4) {
                                                                         itemsProcessed++;
                                                                         if(itemsProcessed === totallength) {
-                                                                            timer = setTimeout(function () { resolver(resa); }, 125094);
+                                                                            timer = setTimeout(function () { resolver(resa); }, 240000);
                                                                         }
                                                                         
                                                                         const loopFourCurrentFileFolderCursor = path.join(loopThreeCurrentFileFolderCursor, file4.name);
@@ -739,7 +736,7 @@ let a = new Promise((resa, reja) => {
                                                 files3.forEach(function (file3, index3) {
                                                     itemsProcessed++;
                                                     if(itemsProcessed === totallength) {
-                                                        timer = setTimeout(function () { resolver(resa); }, 125094);
+                                                        timer = setTimeout(function () { resolver(resa); }, 240000);
                                                     }
                                                     
                                                     const loopThreeCurrentFileFolderCursor = path.join(loopTwoCurrentFileFolderCursor, file3.name);
@@ -781,7 +778,7 @@ let a = new Promise((resa, reja) => {
                                                 files3.forEach(function (file3, index3) {
                                                     itemsProcessed++;
                                                     if(itemsProcessed === totallength) {
-                                                        timer = setTimeout(function () { resolver(resa); }, 125094);
+                                                        timer = setTimeout(function () { resolver(resa); }, 240000);
                                                     }
                                                     
                                                     const loopThreeCurrentFileFolderCursor = path.join(loopTwoCurrentFileFolderCursor, file3.name);
@@ -826,6 +823,9 @@ Promise.all([a]).then(() => {
     try {
         fs.writeFileSync(`${ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH}/IOSAnroidDecrypt/Android_LocalFilesMap.json`, buff);
         console.log("Backup Record Fix File Generated Successfully");
+        var endTime = performance.now();
+        console.log(`It took ${endTime - startTime} milliseconds`);
+        process.exit(0);
     } catch (e) {
         console.error("Faile to Write Backup Record Fix File", e);
     }

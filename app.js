@@ -648,7 +648,7 @@ async function runScript() {
 async function init(){
     await runScript();
 
-    const buff = new Buffer.from(JSON.stringify(JSON.parse(SELECTED_OS_OUTPUT_AREA)), 'utf-8');
+    const buff = new Buffer.from(JSON.stringify(SELECTED_OS_OUTPUT_AREA), 'utf-8');
 
     try {
         await fs.writeFileSync(`${ICAREFONE_TRANSFER_BACKUP_FOLDER_PATH}/IOSAnroidDecrypt/Android_LocalFilesMap.json`, buff);
